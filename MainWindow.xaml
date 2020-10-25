@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Manarca_Andreea_Lab2"
         mc:Ignorable="d"
-        Title=" Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title=" Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded_1">
     <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
@@ -53,21 +53,22 @@
         <Button x:Name="___btnAddToSale" Content="Add To Sale" Margin="523,280,45,17" Grid.Column="1" Grid.RowSpan="2"/>
         <Button x:Name="btnRemoveItem" Content="Remove Item" Margin="523,321,44,70" Grid.Column="1" Grid.RowSpan="3"/>
         <Button x:Name="btnCheckOut" Content="Check Out" FontWeight="Bold" Margin="525,49,43,20" Grid.Column="1" Grid.Row="2"/>
-        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top"
-Width="110" Grid.RowSpan="2">
-            <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
+        <Menu x:Name="mnuMain" HorizontalAlignment="Center" Height="31" VerticalAlignment="Top"
+Width="116" Grid.RowSpan="2">
+            <MenuItem Header="File" Click="MenuItem_Click">
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Doughnuts">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed"
+Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar"
+IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
-                <MenuItem Header="Stop">
-                </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop" Click="mnuStop_Click"/>
             </MenuItem>
         </Menu>
     </Grid>
